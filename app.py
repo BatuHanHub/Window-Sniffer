@@ -1,8 +1,8 @@
 #KÜTÜPHANELER
-import os # terminali temizlemek için
+import datetime # uygulamanın açıldığı tarihi görmek için
 import win32gui # uygulama adlarını görmek için
 import time # sayaç tutmak için
-import datetime # uygulamanın açıldığı tarihi görmek için
+import os # terminali temizlemek için
 
 # eğer programımızı Windows ve Linux/Unix için yazsaydık ve terminali temizlemek isteseydik şu kodu yazmamız gerekirdi;
 '''
