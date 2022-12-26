@@ -28,7 +28,7 @@ def aktifPencereBaslik(): # 'aktifPencereBaslik' adında fonksiyon oluşturuldu
 
 while True: # program döngüde
     
-  Baslik = aktifPencereBaslik() # 'Baslik' değişkeni 'aktifPencereBaslik' değişkenine aktarıldı
+  Baslik = aktifPencereBaslik() # 'aktifPencereBaslik' fonksiyonu 'Baslik' değişkenine aktarıldı
   Tarih = datetime.datetime.now()
   
   print(Baslik) # ekrana pencereyi yazdı
