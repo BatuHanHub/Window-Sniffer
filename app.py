@@ -7,15 +7,12 @@ import os # terminali temizlemek için
 # eğer programımızı Windows ve Linux/Unix için yazsaydık ve terminali temizlemek isteseydik şu kodu yazmamız gerekirdi;
 '''
 degisken = os.name
-
 if degisken == "nt": # NT: Windows'un kullandığı çekirdek
     degisken2 = 'cls' # 'cls' Windows'da terminali temizler 
     os.system(degisken2) # Terminaliniz artık pırılpırıl :)
-
-elif degisken == "poxit": # Linux/Unix (BSD,macOS vs...) için
+elif degisken == "posix": # Linux/Unix (BSD,macOS vs...) için
     degisken = 'clear' # Linux/Unix'de terminali temizler 
     os.system(degisken2) # Terminaliniz artık pırılpırıl :)
-
 # NOT: Ekranınıza sakın bal dökmeyin :D
 '''
 
@@ -26,15 +23,18 @@ dosya.close()
 def aktifPencereBaslik(): # 'aktifPencereBaslik' adında fonksiyon oluşturuldu 
     return win32gui.GetWindowText(win32gui.GetForegroundWindow()) # açılan pencerenin adını döndürür
 
+enSonBaslik = "" # bu değişkeni aşağıda açıklayacağım
+
 while True: # program döngüde
-    
+        
+  time.sleep(0.01) # program işlemcinin içinden geçmemesi için 0.01 zaman bekliyor
   Baslik = aktifPencereBaslik() # 'aktifPencereBaslik' fonksiyonu 'Baslik' değişkenine aktarıldı
-  Tarih = datetime.datetime.now()
+  Tarih = datetime.datetime.now() # tarih zaman değişkeni
   
-  print(Baslik) # ekrana pencereyi yazdı
-  time.sleep(1.5) # 1.5 saniye bekledi
-  os.system('cls') # terminali temizledi  NOT!:Sadece Windows'da çalışır Linux veya Unix(macOS, BSD vs...) sistemler için 'clear' kullanılır.
+  if Baslik != enSonBaslik: # eğer başlık sonbaslık değilse : 
+        print(Baslik) # değişken ekrana yazdırılır
+        enSonBaslik = Baslik # ensonbaşlık başlık değişkenine eklendi
   
-  dosya = open("Geçmiş.txt", "a", encoding='utf-8') # 'Geçmiş.txt' dosyası oluşturdu
-  dosya.write (f"{Baslik} = ({Tarih.strftime('%H.%M.%S')})\n") # uygulamaları adlarını ve açıldığı tarihler yazıldı
-  dosya.close # işi bitince kapattı 
+        dosya = open("Geçmiş.txt", "a", encoding='utf-8') # 'Geçmiş.txt' dosyası oluşturdu
+        dosya.write (f"{Baslik} = ({Tarih.strftime('%H.%M.%S')})\n") # uygulamaları adlarını ve açıldığı tarihler yazıldı
+        dosya.close # işi bitince kapattı 
