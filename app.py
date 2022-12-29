@@ -11,7 +11,7 @@ if degisken == "nt": # NT: Windows'un kullandığı çekirdek
     degisken2 = 'cls' # 'cls' Windows'da terminali temizler 
     os.system(degisken2) # Terminaliniz artık pırılpırıl :)
 elif degisken == "posix": # Linux/Unix (BSD,macOS vs...) için
-    degisken = 'clear' # Linux/Unix'de terminali temizler 
+    degisken2 = 'clear' # Linux/Unix'de terminali temizler 
     os.system(degisken2) # Terminaliniz artık pırılpırıl :)
 # NOT: Ekranınıza sakın bal dökmeyin :D
 '''
