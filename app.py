@@ -11,7 +11,7 @@ if degisken == "nt": # NT: Windows'un kullandığı çekirdek
     degisken2 = 'cls' # 'cls' Windows'da terminali temizler 
     os.system(degisken2) # Terminaliniz artık pırılpırıl :)
 elif degisken == "posix": # Linux/Unix (BSD,macOS vs...) için
-    degisken2 = 'clear' # Linux/Unix'de terminali temizler 
+    degisken = 'clear' # Linux/Unix'de terminali temizler 
     os.system(degisken2) # Terminaliniz artık pırılpırıl :)
 # NOT: Ekranınıza sakın bal dökmeyin :D
 '''
@@ -36,5 +36,5 @@ while True: # program döngüde
         enSonBaslik = Baslik # ensonbaşlık başlık değişkenine eklendi
   
         dosya = open("Geçmiş.txt", "a", encoding='utf-8') # 'Geçmiş.txt' dosyası oluşturdu
-        dosya.write (f"{Baslik} = ({Tarih.strftime('%H.%M.%S')})\n") # uygulamaları adlarını ve açıldığı tarihler yazıldı
+        dosya.write (f"[{Tarih.strftime('%x %X')}] {Baslik}\n") # uygulamaları adlarını ve açıldığı tarihler yazıldı
         dosya.close # işi bitince kapattı 
