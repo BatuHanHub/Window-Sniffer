@@ -2,19 +2,6 @@
 import datetime # uygulamanın açıldığı tarihi görmek için
 import win32gui # uygulama adlarını görmek için
 import time # sayaç tutmak için
-import os # terminali temizlemek için
-
-# eğer programımızı Windows ve Linux/Unix için yazsaydık ve terminali temizlemek isteseydik şu kodu yazmamız gerekirdi;
-'''
-degisken = os.name
-if degisken == "nt": # NT: Windows'un kullandığı çekirdek
-    degisken2 = 'cls' # 'cls' Windows'da terminali temizler 
-    os.system(degisken2) # Terminaliniz artık pırılpırıl :)
-elif degisken == "posix": # Linux/Unix (BSD,macOS vs...) için
-    degisken = 'clear' # Linux/Unix'de terminali temizler 
-    os.system(degisken2) # Terminaliniz artık pırılpırıl :)
-# NOT: Ekranınıza sakın bal dökmeyin :D
-'''
 
 dosya = open("Geçmiş.txt", "a", encoding='utf-8')
 dosya.write ("\t========GEÇMİŞ========\n\n")
