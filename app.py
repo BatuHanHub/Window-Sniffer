@@ -8,15 +8,17 @@ def aktifPencereBaslik(): # 'aktifPencereBaslik' adında fonksiyon oluşturuldu
 
 enSonBaslik = "" # Bu değişken En son açılan pencereyi tutuyor
 
+with open("log.txt", "a", encoding='utf-8') as dosya: # log.txt dosyası oluşturuldu
+          dosya.write ('Başladım: \n\n') # Program açıldığında 'Başladım:' yazacak
+
 while True: # Program döngüde
   time.sleep(0.01) # Program işlemciyi yormaması için 0.01 saniye bekliyor
   Baslik = aktifPencereBaslik() # 'aktifPencereBaslik' fonksiyonu 'Baslik' değişkenine aktarıldı
   Tarih = datetime.datetime.now() # Tarih değikeni zaman değişkenini tutuyor
   
   if Baslik != enSonBaslik: # eğer başlık sonbaslık değilse : 
-        print(f"{Baslik}\n") # değişken ekrana yazdırılır
+        print(f"{Baslik} programı {Tarih.strftime('%d/%m/%Y %H:%M:%S')} zamanında başladı.\n") # Değişken ekrana yazdırılır
         enSonBaslik = Baslik # ensonbaşlık başlık değişkenine eklendi
-  
-        dosya = open("log.txt", "a", encoding='utf-8') # 'log.txt' dosyası oluşturdu
-        dosya.write (f"- {Baslik} programı {Tarih.strftime('%d/%m/%Y %H:%M:%S')} zamanında başladı.\n") 
-        dosya.close # işi bitince kapattı
+
+        with open("log.txt", "a", encoding='utf-8') as dosya: # log.txt dosyası açıldı
+          dosya.write (f"[{Tarih.strftime('%d.%m.%Y %H:%M:%S')}] {Baslik}\n") # [gün.hafta.yıl saat:dakika:saniye] program_adi 
