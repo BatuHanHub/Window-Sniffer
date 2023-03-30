@@ -9,7 +9,7 @@ def aktifPencereBaslik(): # 'aktifPencereBaslik' adında fonksiyon oluşturuldu
 enSonBaslik = "" # Bu değişken En son açılan pencereyi tutuyor
 
 with open("log.txt", "a", encoding='utf-8') as dosya: # log.txt dosyası oluşturuldu
-          dosya.write ('Başladım: \n\n') # Program açıldığında 'Başladım:' yazacak
+          dosya.write (f'Program {Tarih.strftime('%d/%m/%Y %H:%M:%S')} başladı.\n') # Program açıldığında 'Programı x/x/x/ y:y:y zamanında başladı' yazacak
 
 while True: # Program döngüde
   time.sleep(0.01) # Program işlemciyi yormaması için 0.01 saniye bekliyor
