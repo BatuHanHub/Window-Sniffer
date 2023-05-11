@@ -17,7 +17,7 @@ while True: # Program döngüde
   Tarih = datetime.datetime.now() # Tarih değikeni zaman değişkenini tutuyor
   
   if Baslik != enSonBaslik: # eğer başlık sonbaslık değilse : 
-        print(f"{Baslik} programı {Tarih.strftime('%d/%m/%Y %H:%M:%S')} zamanında başladı.\n") # Değişken ekrana yazdırılır
+        print(f"[{Tarih.strftime('%d.%m.%Y %H:%M:%S')}] {Baslik}\n") # Değişken ekrana yazdırılır
         enSonBaslik = Baslik # ensonbaşlık başlık değişkenine eklendi
 
         with open("log.txt", "a", encoding='utf-8') as dosya: # log.txt dosyası açıldı
